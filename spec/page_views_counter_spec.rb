@@ -1,6 +1,5 @@
 require 'spec_helper'
 require_relative '../lib/page_views_counter'
-# require_relative '../spec/fixtures/logfile.log'
 
 describe PageViewsCounter do
   describe '.call' do
