@@ -19,7 +19,7 @@ describe LogReader do
   describe '.most_page_views' do
     context 'calls PageViewsCounter' do
       it do
-        expect(PageViewsCounter).to receive(:call).with(file).and_call_original
+        expect(PageViewsCounter).to receive(:call).with(file)
         described_class.most_page_views
       end
     end
