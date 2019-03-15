@@ -28,8 +28,8 @@ class LogReader
 
 
   def file_name_from_argv
-    ARGV.select { |arg| /([a-zA-Z0-9\s_\\.\-\(\):])+(.log)$/ =~ arg }.first
+    file_name = ARGV.select { |arg| /([a-zA-Z0-9\s_\\.\-\(\):])+(.log)$/ =~ arg }.first
+    raise 'provide a valid file' if file_name.to_s.empty? || !File.exist?(file_name)
+    file_name
   end
 end
-
-# LogReader.print_page_views
