@@ -5,13 +5,20 @@ require_relative '../lib/page_views_printer'
 describe LogReader do
   let(:file) { Dir.pwd + '/spec/fixtures/logfile.log' }
   let(:command_line_args) { "--file ruby.rb #{file}" }
-  before { ARGV = command_line_args.split }
 
   describe '#initialize' do
     context 'reads ARGV from command line' do
+      before { ARGV = command_line_args.split }
 
       it 'chooses file with right extension from ARGV' do
         expect(described_class.new.file).to eq file
+      end
+    end
+
+    context 'file is not provided' do
+      it 'raises error if file does not exist' do
+        ARGV = []
+        expect { described_class.new.file }.to raise_error 'provide a valid file'
       end
     end
   end
@@ -26,6 +33,8 @@ describe LogReader do
           "/about" => 2
         }
       end
+
+      before { ARGV = command_line_args.split }
 
       it 'calls printer class' do
         expect(PageViewsPrinter)
