@@ -7,7 +7,7 @@ describe PageViewsPrinter do
       let(:file) { Dir.pwd + '/spec/fixtures/logfile.log' }
       let(:page_views_hash) { {'/home': 4, '/help_page/1': 5, '/about': 2}  }
       let(:output_file) { Dir.pwd + '/spec/fixtures/output.txt' }
-      let(:output) { File.read(file)  }
+      let(:output_text) { File.read(output_file)  }
       let(:unique_page_views_hash) do
         {
           "/home" => 5,
@@ -18,7 +18,7 @@ describe PageViewsPrinter do
 
       it 'prints views to stdout' do
         expect { described_class.call(page_views_hash, unique_page_views_hash) }
-          .to output(output)
+          .to output(output_text)
           .to_stdout
       end
     end
