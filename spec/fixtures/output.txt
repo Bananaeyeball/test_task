@@ -4,13 +4,6 @@ All Page Views
 /about 2 visits
 ====================================================================================================
 Unique Page Views
-/home 316.433.849.805 2 visits
-/help_page/1 126.318.035.038 1 visits
-/home 184.123.665.067 1 visits
-/about 444.701.448.104 1 visits
-/help_page/1 929.398.951.889 1 visits
-/help_page/1 722.247.931.582 1 visits
-/about 061.945.150.735 1 visits
-/help_page/1 646.865.545.408 1 visits
-/home 235.313.352.950 1 visits
-/help_page/1 543.910.244.929 1 visits
+/home 5 visits
+/help_page/1 4 visits
+/about 2 visits
