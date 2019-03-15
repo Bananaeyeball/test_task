@@ -1,4 +1,6 @@
 require_relative 'page_views_counter'
+require_relative 'unique_page_views_counter'
+require_relative 'page_views_printer'
 
 class LogReader
   def self.print_page_views
@@ -29,3 +31,5 @@ class LogReader
     ARGV.select { |arg| /([a-zA-Z0-9\s_\\.\-\(\):])+(.log)$/ =~ arg }.first
   end
 end
+
+# LogReader.print_page_views
