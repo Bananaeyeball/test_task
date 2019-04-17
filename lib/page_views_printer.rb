@@ -19,9 +19,7 @@ class PageViewsPrinter
 
   def print_page_views
     puts "All Page Views\n"
-    page_views_hash.group_by do |k, v|
-      v
-    end.each { |k, v| v.each { |v| puts "#{v.join(" ")} visits" } }
+    page_views_hash.each { |k, v| v.each { |v| puts "#{v.join(" ")} visits" } }
   end
 
   def print_unique_page_views

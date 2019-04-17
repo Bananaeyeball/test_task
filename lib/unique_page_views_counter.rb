@@ -6,12 +6,15 @@ class UniquePageViewsCounter < PageViewsCounter
     build_map_url_to_ips.reduce({}) do |acc, item|
       acc[item.first] = item[1].uniq.count
       acc
-    end
+    end.sort_by { |k, v| v }.reverse
   end
 
   def build_map_url_to_ips
     IO.readlines(file).reduce(Hash.new { |h, k| h[k] = [] }) do |acc, line|
-      acc[line.split.first] << line.split[1]
+      splitted_line = line.split
+      next if splitted_line.empty?
+      next if splitted_line[1] = /d{3}/
+      acc[splitted_line.first] << splitted_line[1]
       acc
     end
   end

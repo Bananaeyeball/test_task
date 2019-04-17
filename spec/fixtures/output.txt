@@ -1,9 +1,9 @@
 All Page Views
-/home 4 visits
 /help_page/1 5 visits
+/home 4 visits
 /about 2 visits
 ====================================================================================================
 Unique Page Views
-/home 5 visits
-/help_page/1 4 visits
+/help_page/1 5 visits
+/home 4 visits
 /about 2 visits

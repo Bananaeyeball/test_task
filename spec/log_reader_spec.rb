@@ -25,21 +25,18 @@ describe LogReader do
 
   describe '.print_page_views' do
     context 'calls PageViewsCounter' do
-      let(:page_views_hash) { {'/home': 4, '/help_page/1': 5, '/about': 2}  }
-      let(:unique_page_views_hash) do
-        {
-          "/home" => 4,
-          "/help_page/1" => 5,
-          "/about" => 2
-        }
+      let(:page_views_array) { [[:"/help_page/1", 5], [:"/home", 4], [:"/about", 2]]  }
+      let(:unique_page_views_array) do
+        [["/help_page/1", 5], ["/home", 4], ["/about", 2]]
       end
+
 
       before { ARGV = command_line_args.split }
 
       it 'calls printer class' do
         expect(PageViewsPrinter)
           .to receive(:call)
-          .with(page_views_hash, unique_page_views_hash)
+          .with(page_views_array, unique_page_views_array)
 
         described_class.print_page_views
       end

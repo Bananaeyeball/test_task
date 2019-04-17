@@ -6,16 +6,17 @@ describe UniquePageViewsCounter do
     context 'returns most page views count hash' do
       let(:file) { Dir.pwd + '/spec/fixtures/logfile.log' }
 
-    let(:hash) do
-      {
-        "/home" => 4,
-        "/help_page/1" => 5,
-        "/about" => 2,
-      }
+    let(:array) do
+      [["/help_page/1", 5], ["/home", 4], ["/about", 2]]
+      # {
+      #   "/help_page/1" => 5,
+      #   "/home" => 4,
+      #   "/about" => 2
+      # }
     end
 
       it do
-        expect(described_class.call(file)).to eq(hash)
+        expect(described_class.call(file)).to eq(array)
       end
     end
   end
